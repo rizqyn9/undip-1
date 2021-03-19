@@ -1,0 +1,6 @@
+{
+    "workbench.editor.enablePreview": false,
+    "prettier.enable": true,
+    "prettier.arrowParens": "always",
+    "git.ignoreLimitWarning": true,
+}

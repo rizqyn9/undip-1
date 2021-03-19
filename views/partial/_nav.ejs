@@ -1,0 +1,60 @@
+<nav id="header" class="fixed w-full z-30 top-0 text-indigo-50 bg-indigo-700 shadow-2xl border-b-4 border-indigo-300">
+    <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+        <div class="flex flex-col items-start text-indigo-50">
+            <p class="font-bold text-lg">ARSIP INAKTIF</p>
+            <p class="font-bold text-sm">Disdikbud Jawa Tengah</p>
+        </div>
+        <div class="block lg:hidden">
+        <button id="nav-toggle" class="flex items-center p-1 text-pink-800 hover:text-gray-900 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+            <svg class="fill-current h-6 w-6" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            </svg>
+        </button>
+        </div>
+        <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black lg:p-0 z-20" id="nav-content">
+        <ul class="list-reset lg:flex justify-end flex-1 items-center gap-5 mr-4">
+            <li class="mr-3">
+            <a class="inline-block text-indigo-100 no-underline hover:underline <%= title == "Dashboard" ? 'font-bold' : '' %>" href="/dashboard">Dashboard</a>
+            </li>
+            <li class="mr-3">
+            <a class="inline-block text-indigo-100 no-underline hover:underline hover:text-underline <%= title == "Surat Inaktif" ? 'font-bold' : '' %>" href="/inaktif">Inaktif</a>
+            </li>
+            <li class="mr-3">
+            <a class="inline-block text-indigo-100 no-underline hover:underline hover:text-underline <%= title == "" ? 'font-bold' : '' %></a>" href="#">Tambah Data</a>
+            </li>
+        </ul>
+        <label
+            for="dropCheck"
+            id="navAction"
+            class="mx-auto lg:mx-0 hover:bg-indigo-300 bg-indigo-50 border-2 text-indigo-800 font-bold rounded-full mt-4 lg:mt-0 py-2 px-8 shadow bg-opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out relative"
+        >
+            <%= user.Username %>
+            <input type="checkbox" id="dropCheck" class="hidden"> 
+            <div class="absolute top-12 bg-gradient-to-t from-indigo-50 to-indigo-200 px-2 py-2 border-2 border-indigo-900 shadow-lg rounded-lg w-max overflow-hidden closed transition-all" 
+                    style=" transform: translate(-50%,5%); left: 50%; ;" id="drop-down">
+                <ul class="flex flex-col gap-2 items-center">
+                    <li class="hover:bg-indigo-400 rounded-md w-full px-5 py-1 flex justify-center cursor-pointer"><a class="appearance-none w-24 text-center">Profile</a></li>
+                    <li class="rounded-md w-full px-5 py-1 flex justify-center hover:text-red-200 hover:bg-red-600 cursor-pointer"><a class="appearance-none w-24 text-center">Log Out</a></li>
+                </ul>
+            </div>
+        </label>
+        </div>
+    </div>
+    <!-- <hr class="border-b border-gray-100 opacity-25 my-0 py-0" /> -->
+</nav>
+
+<script>
+    let dropDownCheck = document.getElementById('dropCheck')
+    let dropDown = document.getElementById('drop-down')
+
+    dropDownCheck.addEventListener('click', () => {
+        // console.log(dropDownCheck.checked);
+        if(dropDownCheck.checked){
+            dropDown.classList.remove('closed')
+        } else {
+            dropDown.classList.add('closed')
+        }
+    })
+
+</script>

@@ -1,0 +1,28 @@
+<%- include('partial/_header') %> 
+<%- include('partial/_nav')  %> 
+<%- include('partial/_section')  %> 
+
+<!-- ! Dashboard  -->
+    <div class="flex-grow flex  gap-5" >
+        <div class="flex flex-col justify-center px-10 bg-indigo-500 border-2 rounded-md border-indigo-300 w-full gap-0">
+            <p class="text-indigo-50 font-bold text-2xl tracking-wide mb-2 ">Hi <%= user.Username %> !!!</p>
+            <p class="text-indigo-50 font-bold text-4xl tracking-wide">Selamat datang di</p>
+            <p class="text-indigo-50 font-bold text-6xl tracking-wide">ARSIP INAKTIF</p>
+            <p class="text-indigo-50 font-bold text-4xl tracking-wide">Disdikbud Jawa Tengah</p>
+        </div>
+        <div class="w-2/3  text-indigo-50 flex flex-col gap-5">
+            <div class="bg-indigo-500 border-2 rounded-md border-indigo-300 p-7 text-xl">
+                <p id="date-time" class=""></p>
+            </div>
+            <div class="bg-indigo-500 border-2 rounded-md border-indigo-300 flex-grow p-7 flex flex-col justify-center">
+                <p class="font-bold text-4xl ">Total</p>
+                <p class="font-bold text-4xl mt-2">Surat Inaktif</p>
+                <a href="/inaktif" class="font-bold text-xl hover:underline mt-2">Lihat Detail</a>
+                <div class="w-full">
+                    <p class="text-9xl text-right font-extrabold">120</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<%- include('partial/_footer')  %> 

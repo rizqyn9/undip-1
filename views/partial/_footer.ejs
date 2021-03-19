@@ -1,0 +1,13 @@
+</section>
+
+<script>
+    let dateContainer = document.getElementById('date-time')
+    let m = moment.locale('id')
+    setInterval(() => {
+        let n = moment().format('dddd, Do MMMM YYYY, hh:mm:ss');
+        dateContainer.innerHTML = n
+        console.log();
+    },1000)
+</script>
+</body>
+</html>

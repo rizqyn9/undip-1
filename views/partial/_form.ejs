@@ -1,0 +1,66 @@
+<div class="w-full bg-white bg-opacity-20 rounded-2xl px-14 py-8 mt-6">
+    <form action="" method="POST" class=" grid grid-cols-2 gap-4">
+        <div class=" px-8 ">
+            <label for="" class="t_label">No Arsip</label>
+            <input type="text" name="No_Arsip" class="t_input" placeholder="No Arsip">
+        </div>
+        <div class="px-8">
+            <label class="t_label" for="">Tanggal Input</label>
+            <input type="date" name="Tanggal_Input" class="t_input">
+        </div>
+        <div class="px-8">
+            <label class="t_label" for="">Pencipta Arsip</label>
+            <input type="text" name="Author" class="t_input" placeholder="Pencipta Arsip">
+        </div>
+        <div class="px-8">
+            <label class="t_label" for="">Kode Klasifikasi</label>
+            <input type="text" name="Kode_Klasifikasi" class="t_input" placeholder="Kode Klasifikasi">
+        </div>
+        <div class="px-8">
+            <label class="t_label" for="">Unit Pengolah</label>
+            <input type="text" name="Unit_Pengolah" class="t_input" placeholder="Unit Pengolah">
+        </div>
+        <div class="px-8">
+            <label class="t_label" for="">Bulan / Tahun</label>
+            <div class="flex">
+                <input type="text" name="Bulan" class="t_input w-1/4" placeholder="Bulan">
+                <input type="text" name="Tahun" class="t_input w-1/5 ml-5" placeholder="Tahun">
+            </div>
+        </div>
+        <div class="px-8">
+            <label class="t_label" for="">Kelengkapan</label>
+            <input type="text" name="Kelengkapan" class="t_input" placeholder="Kelengkapan">
+        </div>
+        <div class="px-8">
+            <label class="t_label" for="">Jenis Media</label>
+            <input type="text" name="Media" class="t_input" placeholder="Media">
+        </div>
+        <div class="px-8">
+            <label class="t_label" for="">Lokasi Arsip</label>
+            <input type="text" name="Lokasi_Arsip" class="t_input" placeholder="Lokasi Arsip">
+        </div>
+        <div class="px-8">
+            <label class="t_label" for="">Tingkat Perkembangan</label>
+            <select name="Tingkat_Perkembangan" id="" class="t_input">
+                <option value="Asli">Asli</option>
+                <option value="Tembusan">Tembusan</option>
+                <option value="Fotocopy">Fotocopy</option>
+            </select>
+        </div>
+        <div class="px-8">
+            <label class="t_label" for="">Nomor Boks</label>
+            <input type="text" name="Boks" class="t_input" placeholder="Nomor Boks">
+        </div>
+        <div class="px-8">
+            <label class="t_label" for="">File</label>
+            <input type="file" name="File" class="t_input" >
+        </div>
+        <div class="px-8 col-span-2">
+            <label class="t_label" for="">Uraian</label>
+            <textarea type="text" name="Uraian" class="t_input" style="min-height: 25vh;" placeholder="Uraian"></textarea>
+        </div>
+        <div class="col-span-2 flex items-center justify-center mt-4">
+            <input type="submit" class="w-28 h-10 rounded-md bg-indigo-300 border-2 border-indigo-800 hover:bg-indigo-800 hover:text-white" value="Submit">
+        </div>
+    </form>
+</div>

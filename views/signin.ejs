@@ -1,0 +1,58 @@
+<%- include('partial/_header') %> 
+<!-- ! Container -->
+<div class="w-full h-screen flex items-center justify-center bg-no-repeat bg-cover bg-center shadow-2xl opacity-80" style="background-image: url('img/cover/disdikbud-1.jpg');">
+    <div class="bg-indigo-700 w-1/3 text-indigo-100 font-bold mt-50 py-5 rounded bg-opacity-90 border-2 border-indigo-100" style="min-height: 55vh;">
+        <div class="text-center text-2xl tracking-normal px-14 text-indigo-50">DINAS PENDIDIKAN DAN KEBUDAYAAN PROVINSI JAWA TENGAH</div>
+        <hr class="mt-5 border-2 border-indigo-200">
+        <hr class="mt-1 border border-indigo-200">
+        <div class=" w-full flex flex-col items-center px-5" id="login">
+            <form action="/signin" method="POST" class=" mt-11 flex flex-col justify-center items-center w-full" id="login">
+                <div class="w-full flex justify-between items-center">
+                    <label for="email">E-mail</label>
+                    <input id="email" type="email" name="email" class="w-2/3 p-2 focus:outline-none px-4 rounded-sm text-indigo-800 focus:ring focus:ring-indigo-400">
+                </div>
+                <div class="mt-3 w-full flex justify-between items-center">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" name="password" class="w-2/3 p-2 focus:outline-none px-4 rounded-sm text-indigo-800 focus:ring focus:ring-indigo-400">
+                </div>
+                <input type="submit" value="Masuk" class="appearance-none focus:outline-none bg-indigo-100 text-indigo-900 text-xl py-1 rounded mt-6 justify-self-center w-1/2 hover:bg-indigo-300 cursor-pointer">
+            </form>
+            <button onclick="signup()" class="appearance-none focus:outline-none text-sm hover:underline text-center mt-4">Belum punya akun? Daftar</button>
+        </div>
+        <div class="hidden w-full flex flex-col items-center px-5" id="signup">
+            <form action="/signup" method="POST" class="mt-11 flex flex-col justify-center items-center w-full" id="signup">
+                <div class="w-full flex justify-between items-center">
+                    <label for="email">Username</label>
+                    <input id="email" type="text" name="username" class="w-2/3 p-2 focus:outline-none px-4 rounded-sm text-indigo-800 focus:ring focus:ring-indigo-400">
+                </div>
+                <div class="mt-3 w-full flex justify-between items-center">
+                    <label for="password">E-mail</label>
+                    <input id="password" type="email" name="email" class="w-2/3 p-2 focus:outline-none px-4 rounded-sm text-indigo-800 focus:ring focus:ring-indigo-400">
+                </div>
+                <div class="mt-3 w-full flex justify-between items-center">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" name="password" class="w-2/3 p-2 focus:outline-none px-4 rounded-sm text-indigo-800 focus:ring focus:ring-indigo-400">
+                </div>
+                <input type="submit" value="Daftar" class="appearance-none focus:outline-none bg-indigo-100 text-indigo-900 text-xl  py-1 rounded mt-6 justify-self-center w-1/2 hover:bg-indigo-300 cursor-pointer">
+            </form>
+            <button onclick="login()" class="appearance-none focus:outline-none text-sm hover:underline text-center mt-4">Sudah punya akun? Login</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function signup () {
+        let login = document.getElementById('login')
+        let signup = document.getElementById('signup')
+        login.classList.add('hidden')
+        signup.classList.remove('hidden')
+      }
+    function login () {
+        let login = document.getElementById('login')
+        let signup = document.getElementById('signup')
+        signup.classList.add('hidden')
+        login.classList.remove('hidden')
+      }
+</script>
+
+<%- include('partial/_footer')  %> 
