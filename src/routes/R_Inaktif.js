@@ -44,16 +44,13 @@ route.post("/input", async (req, res, next) => {
 
 		await inaktif.save((err, result) => {
 			if (err) {
-				console.log("error : ", err);
-				res.redirect('/inaktif')
+				// console.log("error : ", err);
+				return res.redirect('/inaktif')
 			} else {
-				console.log("Success : ", result);
-				res.redirect("/inaktif");
+				// console.log("Success : ", result);
+				return res.redirect("/inaktif");
 			}
-		}).catch((err) => {
-			console.log(err);
-			res.redirect('/inaktif')
-		});
+		})
 	} catch (err) {
 		console.log(err);
 		res.redirect('/inaktif')
@@ -91,6 +88,7 @@ route.post('/:id', async(req,res,next) => {
 				// console.log('====================================');
 				// console.log(data);
 				// console.log('====================================');
+				res.redirect("/inaktif")
 			})
 	} catch (error) {
 		console.log(error);
