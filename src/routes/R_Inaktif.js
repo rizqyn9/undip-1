@@ -5,8 +5,8 @@ const InAktif = require("../models/M_inaktif");
 route.get('/', async(req,res,next) => {
     try {
         const data = await InAktif.find()
-        console.log(data.length);
-        console.log(req.session.user.userData);
+        // console.log(data.length);
+        // console.log(req.session.user.userData);
         res.render('inaktif',{
             user : req.session.user.userData,
 			title : "Surat Inaktif",
@@ -28,7 +28,7 @@ route.get("/input", (req, res, next) => {
 });
 
 //  Saved form data input
-route.post("/", async (req, res, next) => {
+route.post("/input", async (req, res, next) => {
     // console.log({...req.body});
 	try {
 		const inaktif = new InAktif({
@@ -45,17 +45,18 @@ route.post("/", async (req, res, next) => {
 		await inaktif.save((err, result) => {
 			if (err) {
 				console.log("error : ", err);
-				res.send(err);
+				res.redirect('/inaktif')
 			} else {
 				console.log("Success : ", result);
-				res.redirect("/dashboard");
+				res.redirect("/inaktif");
 			}
 		}).catch((err) => {
 			console.log(err);
-			res.send(err);
+			res.redirect('/inaktif')
 		});
 	} catch (err) {
 		console.log(err);
+		res.redirect('/inaktif')
 	}
 });
 
@@ -87,9 +88,9 @@ route.post('/:id', async(req,res,next) => {
 			},
 			{useFindAndModify: false})
 			.then(data => {
-				console.log('====================================');
-				console.log(data);
-				console.log('====================================');
+				// console.log('====================================');
+				// console.log(data);
+				// console.log('====================================');
 			})
 	} catch (error) {
 		console.log(error);
