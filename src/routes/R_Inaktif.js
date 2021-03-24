@@ -21,7 +21,10 @@ route.get('/', async(req,res,next) => {
 
 //  Show form data input
 route.get("/input", (req, res, next) => {
-	res.render("input");
+	res.render("input",{
+		user : req.session.user.userData,
+		title : "Input Inaktif",
+	});
 });
 
 //  Saved form data input
