@@ -29,7 +29,7 @@ route.get("/input", (req, res, next) => {
 
 //  Saved form data input
 route.post("/input", async (req, res, next) => {
-    // console.log({...req.body});
+    console.log({...req.body});
 	try {
 		const inaktif = new InAktif({
 			...req.body,
@@ -38,7 +38,6 @@ route.post("/input", async (req, res, next) => {
 					Bulan : req.body.Bulan,
 					Tahun: req.body.Tahun
 				},
-				Nomor_Boks :req.body.boks,
 				Date_Created: Date.now()
 		});
 
@@ -63,7 +62,7 @@ route.get('/:id',async (req,res,next) => {
 	try {
 		// console.log(req.params.id);
 		const data = await InAktif.findById(req.params.id)
-		console.log(data);
+		// console.log(data);
 		res.render('inputEdit', {
             user : req.session.user.userData,
 			data : data,
@@ -80,16 +79,16 @@ route.post('/:id', async(req,res,next) => {
 	// console.log(req.body);
 	try {
 		const data = await InAktif.findByIdAndUpdate(req.params.id,{
-				...req.body,
-				Last_Modified : Date.now()
+			Properties : {
+				Author : req.body.Author,
+				Bulan : req.body.Bulan,
+				Tahun: req.body.Tahun
 			},
-			{useFindAndModify: false})
-			.then(data => {
-				// console.log('====================================');
-				// console.log(data);
-				// console.log('====================================');
-				res.redirect("/inaktif")
-			})
+			},
+		)
+		.then(data => {
+			res.redirect("/inaktif")
+		})
 	} catch (error) {
 		console.log(error);
 	}

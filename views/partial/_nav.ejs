@@ -20,9 +20,6 @@
             <li class="mr-3">
             <a class="inline-block text-indigo-100 no-underline hover:underline hover:text-underline <%= title == "Surat Inaktif" ? 'font-bold' : '' %>" href="/inaktif">Inaktif</a>
             </li>
-            <li class="mr-3">
-            <a class="inline-block text-indigo-100 no-underline hover:underline hover:text-underline <%= title == "" ? 'font-bold' : '' %></a>" href="#">Tambah Data</a>
-            </li>
         </ul>
         <label
             for="dropCheck"
@@ -34,8 +31,8 @@
             <div class="absolute top-12 bg-gradient-to-t from-indigo-50 to-indigo-200 px-2 py-2 border-2 border-indigo-900 shadow-lg rounded-lg w-max overflow-hidden closed transition-all" 
                     style=" transform: translate(-50%,5%); left: 50%; ;" id="drop-down">
                 <ul class="flex flex-col gap-2 items-center">
-                    <li class="hover:bg-indigo-400 rounded-md w-full px-5 py-1 flex justify-center cursor-pointer"><a class="appearance-none w-24 text-center">Profile</a></li>
-                    <li class="rounded-md w-full px-5 py-1 flex justify-center hover:text-red-200 hover:bg-red-600 cursor-pointer"><a class="appearance-none w-24 text-center">Log Out</a></li>
+                    <li class="hover:bg-indigo-400 rounded-md w-full px-5 py-1 flex justify-center cursor-pointer"><a href="/user" class="appearance-none w-24 text-center">Profile</a></li>
+                    <li class="rounded-md w-full px-5 py-1 flex justify-center hover:text-red-200 hover:bg-red-600 cursor-pointer"><a href="/keluar" class="appearance-none w-24 text-center">Log Out</a></li>
                 </ul>
             </div>
         </label>

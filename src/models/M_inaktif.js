@@ -50,7 +50,7 @@ const InAktif = new mongoose.Schema({
         default: Date.now
     },
     Nomor_Boks: {
-        type: Number
+        type: String
     },
     File : {
         type : String

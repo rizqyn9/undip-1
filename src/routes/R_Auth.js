@@ -23,7 +23,11 @@ router.post('/signin', async (req,res) => {
         } 
         // console.log(user);
         let passCheck = await user.validPassword(password)
-        if(!passCheck) return req.session.error = "Wrong Password"
+        if(!passCheck) {
+            console.log("Wrong Pass");
+            res.redirect('/')
+            return req.session.error = "Wrong Password"
+        }
         let userData = {
             ...user._doc,
             Password:null
@@ -73,9 +77,15 @@ router.post('/signup', (req,res) => {
 
 })
 
-// ! SIGN OUT
-router.get('/signout', (req,res,next) => {
-    res.send("signout")
+//  Logout
+router.get('/keluar', (req,res,next) => {
+    console.log("out");
+    req.session.destroy((err) => {
+        // delete session data from store, using sessionID in cookie
+        if (err) throw err;
+        res.clearCookie("user_sid");
+        res.redirect('/authentication')
+    });
 })
 
 module.exports= router

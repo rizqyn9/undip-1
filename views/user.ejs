@@ -1,0 +1,56 @@
+<%- include('partial/_header') %> 
+<%- include('partial/_nav')  %> 
+<%- include('partial/_section')  %> 
+<div class="flex flex-grow flex-col justify-center items-center px-10 bg-indigo-500 border-l-4  border-indigo-300 w-full">
+    <div class="w-1/2 bg-indigo-400 p-10 px-14 rounded-md border-4 border-indigo-600" >
+        <form action="" method="POST" class="w-full flex flex-col gap-5 text-indigo-50 font-semibold">
+            <input type="text" name="id" id="Name" class="hidden" value="<%= user._id %>" disabled=true>
+            <!-- <div class="w-full grid grid-cols-3 items-center">
+                <label for="Name" class="t_labe col-span-1">Nama</label>
+                <input type="text" name="Name" id="Name" class="t_input col-span-2" value="<%= user.Name %>" disabled=true>
+            </div> -->
+            <div class="w-full grid grid-cols-3 items-center">
+                <label for="Username" class="t_labe col-span-1 ">Nama Pengguna *</label>
+                <input type="text" id="Username" name="Username" class="t_input col-span-2" value="<%= user.Username %>" disabled=true  required>
+            </div>
+            <div class="w-full grid grid-cols-3 items-center">
+                <label for="Email" class="t_labe col-span-1 ">Email *</label>
+                <input type="email" id="Email" name="Email" class="t_input col-span-2" value="<%= user.Email%>" disabled=true required>
+            </div>
+            <div class="w-full grid grid-cols-3 items-center hidden" id="passwordInput">
+                <label for="Password" class="t_labe col-span-1 ">Password *</label>
+                <input type="password" name="Password Baru" class="t_input col-span-2" disabled= true required>
+            </div>
+            <div class="flex w-full justify-center gap-6 mt-8 hidden" id="submitUbah">
+                <a class="w-32 rounded-md py-2 bg-green2 text-center border border-indigo-200 text-indigo-50 font-semibold cursor-pointer hover:bg-indigo-200"  onclick="ubahData()">Batal</a>
+                <input type="submit" value="Perbarui" class="w-32 rounded-md py-2 bg-indigo-200 text-indigo-700 font-semibold cursor-pointer hover:bg-indigo-700 hover:text-indigo-50" disabled=true>
+            </div>
+            <div class="flex w-full justify-center gap-6 mt-8" id="ubah">
+                <a onclick="ubahData()" class="w-32 rounded-md py-2 bg-indigo-200 text-indigo-700 text-center cursor-pointer hover:bg-indigo-700 hover:text-indigo-50">Ubah</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    let inputData = document.querySelectorAll('input')
+    let passwordInput = document.querySelector('#passwordInput')
+    let ubahBtn = document.querySelector('#ubah')
+    let submitBtn = document.querySelector('#submitUbah')
+
+    function ubahData () {
+        ubahBtn.classList.toggle('hidden')
+        submitBtn.classList.toggle('hidden')
+        passwordInput.classList.toggle('hidden')
+        inputData.forEach(el => {
+            if(el.disabled){
+                el.disabled = false
+            } else {
+                el.disabled = true
+            }
+        })
+    }
+
+</script>
+
+<%- include('partial/_footer')  %> 

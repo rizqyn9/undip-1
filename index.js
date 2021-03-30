@@ -14,7 +14,7 @@ const expressLayout = require('express-ejs-layouts')
 const {PORT,SECRET,DB_URL} =require('./config')
 
 //  Konfigurasi Database
-mongoose.connect(DB_URL,{useNewUrlParser: true, useUnifiedTopology:true, useCreateIndex:true})
+mongoose.connect(DB_URL,{useNewUrlParser: true, useUnifiedTopology:true, useCreateIndex:true, useFindAndModify:false})
     .then(()=> console.log("Database Connected"))
     .catch(err => console.log(err))
 
@@ -53,6 +53,7 @@ app.use('/',require('./src/routes/R_Auth'))
 app.use(require('./src/library/cekAuth'))
 app.use('/dashboard', require('./src/routes/R_Core'))
 app.use('/inaktif', require('./src/routes/R_Inaktif'))
+app.use('/user', require('./src/routes/R_User'))
 app.use('/test', (req,res,next) => {
     console.log(req.session);
 })
