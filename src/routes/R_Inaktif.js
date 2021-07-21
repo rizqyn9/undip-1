@@ -5,11 +5,11 @@ const InAktif = require("../models/M_inaktif");
 route.get('/', async(req,res,next) => {
     try {
         const data = await InAktif.find()
-        // console.log(data.length);
+        // console.log(data);
         // console.log(req.session.user.userData);
         res.render('inaktif',{
             user : req.session.user.userData,
-			title : "Surat Inaktif",
+			title : "Arsip Inaktif",
             data : data
         })
 
@@ -76,18 +76,22 @@ route.get('/:id',async (req,res,next) => {
 
 // Edit single data from database
 route.post('/:id', async(req,res,next) => {
-	// console.log(req.body);
+	console.log(req.body);
 	try {
-		const data = await InAktif.findByIdAndUpdate(req.params.id,{
-			Properties : {
-				Author : req.body.Author,
-				Bulan : req.body.Bulan,
-				Tahun: req.body.Tahun
+		const data = await InAktif.findByIdAndUpdate(req.params.id,
+			{
+				...req.body,
+				Properties : {
+					Author : req.body.Author,
+					Bulan : req.body.Bulan,
+					Tahun: req.body.Tahun
+				},
 			},
-			},
-		)
-		.then(data => {
+		).then(data => {
+			console.log("====" + data)
 			res.redirect("/inaktif")
+		}).catch(err => {
+			console.log(err);
 		})
 	} catch (error) {
 		console.log(error);

@@ -1,7 +1,7 @@
 <div class="w-full bg-white bg-opacity-20 rounded-2xl px-14 py-8 mt-6">
     <form action="" method="POST" class=" grid grid-cols-2 gap-4">
         <div class=" px-8 ">
-            <label for="" class="t_label">No Arsip *</label>
+            <label for="" class="t_label">No Definitf *</label>
             <input type="text" name="No_Arsip" class="t_input" placeholder="No Arsip"  required>
         </div>
         <div class="px-8">
@@ -50,7 +50,7 @@
             <label class="t_label" for="">Tingkat Perkembangan</label>
             <select name="Tingkat_Perkembangan" id="" class="t_input">
                 <% 
-                        var Tingkat = ["Asli", "Tembusan", "Fotocopy"]
+                        var Tingkat = ["Asli", "Tembusan", "Fotocopy", "Salinan/Ganda"]
                         for (let i = 0; i < Tingkat.length; i++) {
                                 %><option value="<%= Tingkat[i] %>" ><%= Tingkat[i] %></option><%
                         }
